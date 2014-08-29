@@ -41,7 +41,7 @@ public class APIClient {
 
 		// create a consumer object and configure it with the access
 		// token and token secret obtained from the service provider
-		OAuthConsumer consumer = new CommonsHttpOAuthConsumer("oauth-key", "oauth-secret");
+		OAuthConsumer consumer = new CommonsHttpOAuthConsumer("musichackday2014", "276ea410-29fb-11e4-8c21-0800200c9a66");
 		consumer.setTokenWithSecret("", "");
 
 		// create an HTTP request to a protected resource
