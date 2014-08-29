@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oauth sample</title>
+    <script src="https://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script>
+    <script src="https://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+    <script src='oauth-1.0a.js' type='text/javascript'></script>
+    <script src="jquery-2.1.1.min.js"></script>
+    <script src="hmac-sha1.js"></script>
+    <script src="enc-base64-min.js"></script>
+    <script type="text/javascript" >
+        oauth = new OAuth({
+            consumer: {
+                public: "musichackday2014",
+                secret: "276ea410-29fb-11e4-8c21-0800200c9a66"
+            }
+        });
+
+        function loadContent() {
+            var request_data = {
+                url: "https://ipool.s.asideas.de/api/v3/search",
+                method: 'GET'
+            };
+
+            $.ajax({
+                url: request_data.url,
+                type: request_data.method,
+                dataType: "json",
+                headers: this.oauth.toHeader(this.oauth.authorize(request_data))
+            }).done(function(response) {
+                $( "p" ).text(JSON.stringify(response.documents));
+            }).error(function(response) {
+                $( "p" ).text("error");
+            });
+
+        }
+
+        $( document ).ready(function() {
+            loadContent();
+        });
+
+    </script>
+</head>
+<body>
+    <p>Not loaded yet.</p>
+</body>
+
+</html>
