@@ -253,11 +253,6 @@ static BOOL GCOAuthUseHTTPSCookieStorage = YES;
     
     NSMutableURLRequest *request = [oauth request];
     
-    [request setValue:uuid forHTTPHeaderField:@"X-IPOOL-UID"];
-    [request setValue:uuid forHTTPHeaderField:@"X-WireAlertClient-UID"];
-    [request setValue:WIREALERT_CLIENT_ID forHTTPHeaderField:@"X-WireAlertClient-Version"];
-    [request setValue:[[NSHost currentHost] address] forHTTPHeaderField:@"X-WireAlertClient-IP"];
-    
     if (![[HTTPMethod uppercaseString] isEqualToString:@"GET"] && [oauth.requestParameters count]) {
     
         // Add the parameters to the request body for non GET requests

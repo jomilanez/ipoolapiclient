@@ -32,8 +32,8 @@
 
     // setting oauth key and token
     
-    NSString* oauthKey = @"musichackday2014";
-    NSString* oauthToken = @"276ea410-29fb-11e4-8c21-0800200c9a66";
+    NSString* oauthKey = @"wirealert.welt.de";
+    NSString* oauthToken = @"779DD2A3-7547-42AB-B52C-3D32AB4B0400";
     
     NSString* userID = [[NSUUID UUID] UUIDString];
 
@@ -101,6 +101,12 @@
 - (void) handleResponse:(NSArray *)resultArray {
     
     // processing result array
+    
+    int i = 0;
+    
+    i++;
+    
+    int j = i;
     
 }
 
